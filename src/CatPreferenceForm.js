@@ -3,7 +3,7 @@ import { useState } from "react";
 const CatPreferenceForm = (props) => {
     // create a user select for picking the number of cats they want to see
     // grab that selected value with an event listener on form submit and then update state for numOfCats
-    const [usersQuantityOfKitty, setUsersQuantityOfKitty] = useState("12");
+    const [usersQuantityOfKitty, setUsersQuantityOfKitty] = useState(0);
     const handleChange = e => {
         setUsersQuantityOfKitty(e.target.value);
     }
@@ -32,6 +32,9 @@ const CatPreferenceForm = (props) => {
 
                 <input type="radio" id="twentyCats" name="numOfCats" value="20" />
                 <label htmlFor="twentyCats">20</label>
+
+                <input type="radio" id="fiftyCats" name="numOfCats" value="50" />
+                <label htmlFor="fiftyCats">50</label>
             </fieldset>
             <button type="submit">Unleash the kitties!</button>
         </form>

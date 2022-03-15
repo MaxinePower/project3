@@ -10,7 +10,7 @@ function App() {
   // create a useState for catData to keep track of the api results for all the cats pictures
   const [catData, setCatData] = useState([]);
   // create another usestate called numOfCats to track how many kitties the user wants to see
-  const [numOfCats, setNumOfCats] = useState('');
+  const [numOfCats, setNumOfCats] = useState(0);
 
   // once user has selected a number of KitCats run a side effect to use numOfCats in an api call
   // i do not currently know how to do api call 'header's to pass the key so ill be going unsecure with passing it as a param. for now
@@ -19,7 +19,8 @@ function App() {
       url: 'https://api.thecatapi.com/v1/images/search',
       params: {
         api_key: '5205493a-48e2-4f7a-919f-07519cdaabad',
-        limit: numOfCats
+        limit: numOfCats,
+        size: 'med'
       }
     }).then((apiRes) => {
       console.log(apiRes.data);
