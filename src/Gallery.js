@@ -7,7 +7,7 @@ const CatGallery = (props) => {
                     props.arrayOfKitties.map((kitty) => {
                         return(
                             <li>
-                                <img src={kitty.url} alt="an image of cat" />
+                                <img src={kitty.url} alt="a beautiful cat" />
                             </li>
                         )
                     })
