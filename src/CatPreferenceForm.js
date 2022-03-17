@@ -2,13 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 const CatPreferenceForm = (props) => {
-    // create a user select for picking the number of cats they want to see
-    // grab that selected value with an event listener on form submit and then update state for numOfCats
-    
+    // create a user select for picking the number of cats/theme they want to see
+    // grab that selected values with an event listener on form submit and then update their states
     const [usersQuantityOfKitty, setUsersQuantityOfKitty] = useState(0);
     const [categoryDropDown, setCategoryDropDown] = useState([]);
     const [userCategory, setUserCategory] = useState(0);
-
     const handleNumChange = e => {
         setUsersQuantityOfKitty(e.target.value);
     }
@@ -26,10 +24,16 @@ const CatPreferenceForm = (props) => {
                 api_key: '5205493a-48e2-4f7a-919f-07519cdaabad'
             }
         }).then((apiRes) => {
-            console.log(apiRes.data);
-            // take the data from that api call and update category dropdown or display error of some sort
-            setCategoryDropDown(apiRes.data);
-        })
+            // take the data from that api call and update category dropdown or throw an error of some sort
+            if (apiRes.status === 200 && apiRes.data.length !== 0) {
+                setCategoryDropDown(apiRes.data);
+            } else {
+                throw new Error('holy shit! the call failed! how are we supose to ask for space cats now!');
+            };
+        }).catch(function(err) {
+            console.log(err, "oh no! the kitty database seems to not want to let you see specific themes rn:(");
+            // display a pop up message of sorts
+        });
     }, [])
     
     return(
@@ -55,6 +59,7 @@ const CatPreferenceForm = (props) => {
 
             <label htmlFor="categoryDropDown" className="dropDownLabel">Image Theme:</label>
             <select name="categoryDropDown" id="categoryDropDown" onChange={handleThemeChange}>
+                <option value="placeholder" defaultValue >Pick A Theme!</option>
                 {
                     categoryDropDown.map((category) => {
                         return (

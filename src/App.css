@@ -4,9 +4,8 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
-/* end of setup */
 
-/* some general styling */
+/* -------------some general styling----------------- */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +17,11 @@ body, * {
   background-color: #faf0dc;
   text-align: center;
   font-family: 'Fredoka', sans-serif;
-  font-weight: 400;
+}
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 50px;
 }
 .wrapper {
   max-width: 1200px;
@@ -41,13 +44,14 @@ h3 {
   font-size: 1.4rem;
 }
 
-/* form styling */
+/* -----------form styling---------------- */
 form {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 25px;
 }
+/* --------form. number of cats option styling--------- */
 fieldset {
   font-family: 'Fredoka', sans-serif;
   padding: 20px;
@@ -76,6 +80,7 @@ fieldset label:hover, fieldset label:focus, input[type="radio"]:checked + label 
 input[type=radio] {
   display: none;
 }
+/* ---------form. theme dropdown styling ---------- */
 .dropDownLabel {
   margin-bottom: 10px;
   font-size: 1rem;
@@ -86,6 +91,7 @@ select {
   background-color: #C9A483;
   border: 2px solid #251a14;
   padding: 7px;
+  border-radius: 3px;
 }
 select:hover, select:focus, select:focus-within {
   background-color: #251a14;
@@ -95,7 +101,7 @@ option {
   background-color: #C9A483;
   text-transform: capitalize;
 }
-/* button styling */
+/* --------form. submit button styling---------- */
 form button {
   background-color: #452A13;
   padding: 10px 15px;
@@ -110,7 +116,7 @@ form button:focus, form button:hover {
   color: #452A13;
 }
 
-/* gallery styling */
+/* -----------gallery styling------------- */
 ul {
   list-style: none;
   display: flex;
@@ -125,13 +131,33 @@ li {
   background-color: #251a14;
   display: flex;
   align-items: center;
+  justify-content: center;
+  border: 5px solid #6B4625;
+  border-radius: 3px;
 }
 img {
   width: 100%;
   max-width: 250px
 }
 
-/* media query */
+/* ----------------footer styling---------------- */
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+footer p {
+  background-color: #170B00;
+  padding: 10px 0;
+}
+footer p, footer a {
+  color: #C9A483;
+}
+footer a:focus, footer a:hover {
+  color: #faf0dc;
+}
+
+/* ---------media query------------- */
 @media (max-width: 550px) {
   fieldset { 
     max-width: 275px;
