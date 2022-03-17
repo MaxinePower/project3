@@ -66,7 +66,10 @@ fieldset label {
   color: #faf0dc;
   font-size: 1rem;
 }
-fieldset label:hover, fieldset label:focus, input[type="radio"]:checked+label {
+fieldset label:first-of-type {
+  margin-left: 0;
+}
+fieldset label:hover, fieldset label:focus, input[type="radio"]:checked + label {
   background-color: #C9A483;
   color: #170B00;
 }
@@ -126,4 +129,15 @@ li {
 img {
   width: 100%;
   max-width: 250px
+}
+
+/* media query */
+@media (max-width: 550px) {
+  fieldset { 
+    max-width: 275px;
+  }
+  fieldset label {
+    margin-left: 10px;
+  }
+  .wrapper { width: 95%; }
 }
