@@ -17,25 +17,80 @@ body, * {
   color: #170B00;
   background-color: #faf0dc;
   text-align: center;
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 400;
 }
 .wrapper {
   max-width: 1200px;
   width: 90%;
   margin: 0 auto;
 }
+h1, h2, h3 {
+  font-weight: 600;
+}
 h1 {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  border-bottom: 2px solid #452A13;
 }
 h2 {
   font-size: 1.1rem;
+  margin-bottom: 20px;
 }
 h3 {
   font-size: 1.4rem;
 }
 
 /* form styling */
-input[type=radio] {
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+fieldset {
+  font-family: 'Fredoka', sans-serif;
+  padding: 20px;
+  margin-bottom: 5px;
+  border: 2px solid #6B4625;
+}
+legend {
+  font-size: 1rem;
+}
+fieldset label {
   margin-left: 20px;
+  border: 3px solid #170B00;
+  border-radius: 10px;
+  padding: 3px 7px;
+  background-color: #452A13;
+  color: #faf0dc;
+  font-size: 1rem;
+}
+fieldset label:hover, fieldset label:focus, input[type="radio"]:checked+label {
+  background-color: #C9A483;
+  color: #170B00;
+}
+input[type=radio] {
+  display: none;
+}
+.dropDownLabel {
+  margin-bottom: 10px;
+  font-size: 1rem;
+}
+select {
+  font-family: 'Fredoka', sans-serif;
+  margin-bottom: 15px;
+  background-color: #C9A483;
+  border: 2px solid #251a14;
+  padding: 7px;
+}
+select:hover, select:focus, select:focus-within {
+  background-color: #251a14;
+  color: #fadabe;
+}
+option {
+  background-color: #C9A483;
+  text-transform: capitalize;
 }
 /* button styling */
 form button {

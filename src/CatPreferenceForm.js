@@ -53,6 +53,7 @@ const CatPreferenceForm = (props) => {
                 <label htmlFor="fiftyCats">50</label>
             </fieldset>
 
+            <label htmlFor="categoryDropDown" className="dropDownLabel">Image Theme:</label>
             <select name="categoryDropDown" id="categoryDropDown" onChange={handleThemeChange}>
                 {
                     categoryDropDown.map((category) => {
