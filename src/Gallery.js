@@ -1,3 +1,4 @@
+import KitCatImg from "./KitCatImg";
 const CatGallery = (props) => {
     return (
         <section className="gallery">
@@ -5,11 +6,7 @@ const CatGallery = (props) => {
             <ul>
                 {
                     props.arrayOfKitties.map((kitty) => {
-                        return(
-                            <li key={kitty.id}>
-                                <img src={kitty.url} alt="a wonderful cat" />
-                            </li>
-                        )
+                        return <KitCatImg key={kitty.id} url={kitty.url} />
                     })
                 }
             </ul>
