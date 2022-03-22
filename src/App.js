@@ -60,7 +60,7 @@ function App() {
         </main>
       </div>
       <footer>
-        <p>Made at <a href="https://junocollege.com">Juno College of Technology</a>.</p>
+        <p>Made at <a href="https://junocollege.com">Juno College of Technology</a> using <a href="https://thecatapi.com/">The Cat API</a>.</p>
       </footer>
     </>
   );
